@@ -1,4 +1,9 @@
 package com.board.basic.board.domain.web.board.dto.resp;
 
-public record BoardResponseDto() {
+import org.springframework.http.HttpStatus;
+
+public record BoardResponseDto(
+	HttpStatus status,
+	String message
+) {
 }
