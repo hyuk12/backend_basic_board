@@ -1,6 +1,7 @@
 package com.board.basic.board.domain.web.board.service;
 
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.board.basic.board.domain.web.board.dto.req.BoardCreateReqDto;
 import com.board.basic.board.domain.web.board.entity.repository.BoardRepository;
@@ -8,6 +9,7 @@ import com.board.basic.board.domain.web.user.entity.repository.UserRepository;
 
 import lombok.RequiredArgsConstructor;
 
+@Transactional
 @Service
 @RequiredArgsConstructor
 public class BoardCreateService {
