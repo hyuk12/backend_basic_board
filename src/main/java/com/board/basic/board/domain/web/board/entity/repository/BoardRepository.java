@@ -6,4 +6,5 @@ import com.board.basic.board.domain.web.board.entity.Board;
 
 public interface BoardRepository extends JpaRepository<Board, Long> {
 
+	void updateBoard(Long id, String title, String content);
 }
