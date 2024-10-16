@@ -5,7 +5,7 @@ import org.springframework.http.HttpStatus;
 public record BoardResponseDto(
 	HttpStatus status,
 	String message,
-	Object object
+	Object data
 ) {
 	public static BoardResponseDto of(HttpStatus status, String message, Object object) {
 		return new BoardResponseDto(status, message, object);

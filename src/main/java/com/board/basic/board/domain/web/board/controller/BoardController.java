@@ -56,10 +56,10 @@ public class BoardController {
 	}
 
 	// 게시판 수정
-	@PutMapping
-	public ResponseEntity<?> updateBoard(@RequestBody BoardUpdateReqDto req) {
+	@PutMapping("/{id}")
+	public ResponseEntity<?> updateBoard(@RequestBody BoardUpdateReqDto req, @PathVariable Long id) {
 		try {
-			boardFacade.updateBoard(req);
+			boardFacade.updateBoard(req, id);
 			return ResponseEntity.ok().body(BoardResponseDto.ofSuccess("게시판 수정에 성공하였습니다."));
 		} catch (Exception e) {
 			return ResponseEntity.badRequest().body(BoardResponseDto.ofFail("게시판 수정에 실패하였습니다."));

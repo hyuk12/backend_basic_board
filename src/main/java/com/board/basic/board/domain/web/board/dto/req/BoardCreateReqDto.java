@@ -6,9 +6,9 @@ import com.board.basic.board.domain.web.user.entity.User;
 public record BoardCreateReqDto(
 	String title,
 	String content,
-	Long authorId
+	String author
 ) {
-	public Board of (User author) {
+	public Board of () {
 		return Board.builder()
 			.title(title)
 			.content(content)
