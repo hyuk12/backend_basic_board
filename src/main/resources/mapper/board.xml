@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+        <!DOCTYPE mapper
+                PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+                "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.basic.board.global.mapper.BoardMapper">
+        <insert id="insertBoard">
+                INSERT INTO board (title, content, author)
+                VALUES (#{title}, #{content}, #{author})
+        </insert>
+
+        <update id="updateBoard">
+                UPDATE board
+                SET title = #{title}, content = #{content}, author = #{author}
+                WHERE id = #{id}
+        </update>
+
+        <delete id="deleteBoard">
+                DELETE FROM board
+                WHERE id = #{id}
+        </delete>
+
+        <select id="selectBoard" resultType="com.board.basic.board.domain.web.board.entity.Board">
+                SELECT
+                        id AS id,
+                        title AS title,
+                        content AS content,
+                        author AS author,
+                        created_date AS createdDate,
+                        updated_date AS updatedDate
+                FROM board
+                WHERE id = #{id}
+        </select>
+
+        <select id="selectBoardList" resultType="com.board.basic.board.domain.web.board.entity.Board">
+                SELECT
+                        id AS id,
+                        title AS title,
+                        content AS content,
+                        author AS author,
+                        created_date AS createdDate,
+                        updated_date AS updatedDate
+                FROM board
+        </select>
+</mapper>
